@@ -1,0 +1,172 @@
+:root {
+  color-scheme: light;
+  --bg: #fff8ef;
+  --ink: #28201d;
+  --muted: #695b55;
+  --line: #ead7cb;
+  --accent: #d85b76;
+  --accent-dark: #733044;
+  --sage: #6f9b7b;
+  --sky: #80b9d8;
+  --sun: #f2b84b;
+  --lilac: #b9a2d8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.5;
+  overflow: hidden;
+}
+
+body {
+  width: 100%;
+  height: 100dvh;
+  margin: 0;
+  overflow: hidden;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 18% 20%, rgba(242, 184, 75, 0.34), transparent 18rem),
+    radial-gradient(circle at 82% 18%, rgba(185, 162, 216, 0.28), transparent 18rem),
+    radial-gradient(circle at 75% 86%, rgba(111, 155, 123, 0.28), transparent 20rem),
+    linear-gradient(135deg, #fff8ef, #fff1dc);
+}
+
+a {
+  color: inherit;
+}
+
+.hero {
+  position: relative;
+  height: 100dvh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  text-align: center;
+}
+
+.hero::before,
+.hero::after {
+  content: "";
+  position: absolute;
+  border: 2px dashed rgba(115, 48, 68, 0.18);
+  border-radius: 999px;
+  pointer-events: none;
+}
+
+.hero::before {
+  width: min(72vw, 620px);
+  aspect-ratio: 1;
+  transform: rotate(-12deg);
+}
+
+.hero::after {
+  width: min(86vw, 760px);
+  aspect-ratio: 1;
+  transform: rotate(8deg);
+}
+
+.stitch-card {
+  position: relative;
+  z-index: 1;
+  width: min(720px, 100%);
+  padding: clamp(22px, 4vh, 48px);
+}
+
+.eyebrow {
+  margin: 0 0 clamp(10px, 2vh, 18px);
+  color: var(--accent-dark);
+  font-size: clamp(0.74rem, 1.8vw, 0.92rem);
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  margin-bottom: clamp(2px, 1vh, 10px);
+  color: var(--accent-dark);
+  font-family: Ephesis, "Snell Roundhand", "Brush Script MT", cursive;
+  font-size: clamp(6rem, 22vw, 16rem);
+  font-weight: 400;
+  line-height: 0.72;
+  letter-spacing: 0;
+  text-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.8),
+    0 16px 44px rgba(115, 48, 68, 0.12);
+}
+
+.intro,
+.line,
+.details {
+  color: var(--muted);
+}
+
+.intro {
+  margin-bottom: clamp(8px, 2vh, 14px);
+  font-family: Fraunces, Georgia, serif;
+  font-size: clamp(1.65rem, 4.5vw, 3.7rem);
+  font-weight: 800;
+  line-height: 1;
+}
+
+.line {
+  margin-bottom: clamp(10px, 2vh, 18px);
+  font-size: clamp(1rem, 2.4vw, 1.35rem);
+  font-weight: 700;
+}
+
+.details {
+  margin-bottom: clamp(20px, 4vh, 34px);
+  color: var(--accent-dark);
+  font-size: clamp(0.78rem, 2vw, 0.95rem);
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50px;
+  padding: 0 22px;
+  border: 1px solid rgba(115, 48, 68, 0.2);
+  border-radius: 999px;
+  background: var(--accent);
+  color: #ffffff;
+  font-weight: 800;
+  text-decoration: none;
+  box-shadow: 0 18px 38px rgba(115, 48, 68, 0.18);
+}
+
+@media (max-width: 760px) {
+  .hero {
+    padding: 16px;
+  }
+
+  .hero::before {
+    width: 86vw;
+  }
+
+  .hero::after {
+    width: 106vw;
+  }
+
+  .stitch-card {
+    padding: 18px;
+  }
+
+  .button {
+    width: min(100%, 320px);
+  }
+}
